@@ -55,8 +55,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void selectTwenty() {
+    totalSeconds = 1200;
+    setState(() {});
+  }
+
   void selectTwentyFive() {
-    selectMinute = 1500;
+    totalSeconds = 1500;
     setState(() {});
   }
 
@@ -107,6 +112,24 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: Row(
                   children: [
+                    TextButton(
+                      style: ButtonStyle(
+                        side: MaterialStateProperty.all(
+                          const BorderSide(color: Colors.white, width: 2.0),
+                        ),
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                      ),
+                      onPressed: selectTwenty,
+                      child: Text(
+                        '20',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.background,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
                     TextButton(
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(Colors.white),
